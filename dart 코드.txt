@@ -76,3 +76,64 @@ class MyCalculatorUI extends StatelessWidget {
     );
   }
 }
+
+
+//사각형 배치
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Container(
+            width: 300,
+            height: 300,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 1),
+            ),
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Container(color: Colors.red),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Container(color: Colors.blue),
+                            ),
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(child: Container(color: Colors.black)),
+                                  Expanded(child: Container(color: Colors.orange)),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(color: Colors.yellow),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
